@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --off-white: hsl(0, 0%, 94%);
+    --smokey-grey: hsl(0, 1%, 44%);
+    --light-grey: hsl(0, 0%, 86%);
+    --purple: hsl(259, 100%, 65%);
+    --white: hsl(0, 0%, 100%);
+    --light-red: hsl(0, 100%, 67%);
+}
+
+body{
+    background-color: var(--off-white);
+}
+
+/* CARD CONTAINER */
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white);
+    padding: 25px;
+    width: 48vw;
+    border-radius: 20px 20px 150px 20px;
+}
+
+/* FORM CONTAINER */
+.form-container{
+    display: flex;
+}
+
+.form{
+    display: flex;
+    gap: 20px;
+}
+
+.form label{
+    color: var(--smokey-grey);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    display: block;
+}
+
+/* Inputs */
+.inputs{
+    width: 8rem;
+    display: block;
+    margin-top: 5px;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    border: 1.5px solid var(--light-grey);
+    outline: none;
+    border-radius: 5px;
+}
+
+.form input:is(:active, :focus){
+    border: 1px solid var(--purple);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Errors */
+.error{
+    border: 1px solid var(--light-red);
+}
+
+.error-message{
+    display: none;
+    color: var(--light-red);
+    font-style: italic;
+    font-size: 0.6rem;
+}
+
+/* PARTITION CONTAINER */
+.partition-container{
+    display: flex;
+    width: 95%;
+}
+
+.partition{
+    border: 1px solid var(--light-grey);
+    margin: auto 0;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Submit Button */
+.arrow-btn{
+    cursor: pointer;
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+    padding: 17px;
+    background-color: var(--purple);
+    border: none;
+    outline: none;
+    display: grid;
+    place-items: center;
+}
+
+.arrow-btn:is(:hover, :active){
+    transition: 300ms ease-in-out;
+    background-color: black;
+}
+
+.arrow-btn img{
+    width: 30px;
+    height: 30px;
+}
+
+/* AGE DISPLAY CONTAINER */
+.age-display span{
+    color: var(--purple);
+}
+
+.age-display :where(.years, .months, .days){
+    display: flex;
+    gap: 5px;
+    font-size: 5rem;
+    font-style: italic;
+    font-weight: 800;
+    line-height: 90px;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1200px) {
+    .container{
+        height: 85vh;
+        width: 60vw;
+    }
+
+    .partition-container{
+        width: 95%;
+    }
+
+    .inputs{
+        padding: 5px 10px;
+        width: 5rem;
+    }
+    .inputs::placeholder{
+        font-size: 1.3rem;
+    }
+
+    .arrow-btn{
+        padding: 13px;
+    }
+
+    .age-display :where(.years, .months, .days){
+        line-height: 4.5rem;
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .container{
+        width: 70vw;
+    }
+}
+
+@media (max-width: 450px) {
+    .container{
+        width: 90vw;
+    }
+
+    .partition-container{
+        margin-top: 5px;
+    }
+
+    .arrow-btn{
+        padding: 9px;
+    }
+    .arrow-btn img{
+        width: 22px;
+        height: 22px;
+    }
+
+    .age-display :where(.years, .months, .days){
+        font-size: 3rem;
+    }
+}

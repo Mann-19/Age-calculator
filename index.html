@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./public/style.css">
+
+    <title>Age calculator app</title>
+  </head>
+  <body>
+    <!-- CONTAINER -->
+    <div class="container">
+
+      <!-- FORM CONTAINER -->
+      <div class="form-container">
+        <!-- FORM -->
+        <form class="form" id="form">
+          <!-- DAY -->
+          <div class="form-day">
+            <label for="day" class="form-labels">day</label>
+            <input type="number" name="day" id="day" placeholder="DD" autocomplete="off" class="inputs">
+            <span class="error-message" id="day-error">This field is required</span>
+          </div>
+          
+          <!-- MONTH -->
+          <div class="form-month">
+            <label for="month" class="form-labels">month</label>
+            <input type="number" name="month" id="month" placeholder="MM" autocomplete="off" class="inputs">
+            <span class="error-message" id="month-error">This field is required</span>
+          </div>
+
+          <!-- YEAR -->
+          <div class="form-year">
+            <label for="year" class="form-labels">year</label>
+            <input type="number" name="year" id="year" placeholder="YYYY" autocomplete="off" class="inputs">
+            <span class="error-message" id="year-error">This field is required</span>
+          </div>
+        </form>
+      </div>
+
+      <!-- PARTITION CONTAINER -->
+      <div class="partition-container">
+        <div class="partition"></div>
+        <button type="submit" form="form" class="arrow-btn" id="submit-btn" onclick="calculateAge(event)">
+          <img src="./assets/images/icon-arrow.svg" alt="">
+        </button>
+      </div>
+
+      <!-- AGE DISPLAY -->
+      <div class="age-display">
+        <div class="years"><span id="years-display">--</span>years</div>
+
+        <div class="months"><span id="months-display">--</span>months</div>
+
+        <div class="days"><span id="days-display">--</span>days</div>
+      </div>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script src="./public/script.js"></script>
+  </body>
+</html>
